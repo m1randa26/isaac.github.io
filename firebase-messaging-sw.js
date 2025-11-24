@@ -4,12 +4,12 @@ importScripts("https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging-com
 
 // Configuración igual que en app.js
 firebase.initializeApp({
-      apiKey: "AIzaSyBSozZACEwNHU1vwSVacySicEPNIdsSdCI",
-      authDomain: "pwa-rolando.firebaseapp.com",
-      projectId: "pwa-rolando",
-      storageBucket: "pwa-rolando.firebasestorage.app",
-      messagingSenderId: "1076632724479",
-      appId: "1:1076632724479:web:4fd0fe4a50e985b8a8fdca"
+  apiKey: "AIzaSyBSozZACEwNHU1vwSVacySicEPNIdsSdCI",
+  authDomain: "pwa-rolando.firebaseapp.com",
+  projectId: "pwa-rolando",
+  storageBucket: "pwa-rolando.firebasestorage.app",
+  messagingSenderId: "1076632724479",
+  appId: "1:1076632724479:web:4fd0fe4a50e985b8a8fdca"
 });
 
 const messaging = firebase.messaging();
@@ -19,7 +19,7 @@ messaging.onBackgroundMessage((payload) => {
   const title = payload.notification?.title || "Notificación";
   const options = {
     body: payload.notification?.body || "",
-    icon: "./icons-192.png"
+    icon: "icons/192.png"
   };
   self.registration.showNotification(title, options);
 });
@@ -27,5 +27,5 @@ messaging.onBackgroundMessage((payload) => {
 // Manejar clics en la notificación
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  event.waitUntil(clients.openWindow('/'));
+  event.waitUntil(clients.openWindow('/notificacion.github.io/'));
 });
