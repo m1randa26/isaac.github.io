@@ -1,8 +1,8 @@
 {
   "name": "PWA FCM Demo",
   "short_name": "FCM Demo",
-  "start_url": "/notificacion.github.io/",
-  "scope": "/notificacion.github.io/",
+  "start_url": "/isaac.github.io/",
+  "scope": "/isaac.github.io/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#111827",
